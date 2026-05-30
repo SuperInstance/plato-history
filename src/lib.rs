@@ -99,7 +99,7 @@ impl HistoryQuery {
             }
         }
         for (k, v) in &self.tag_filters {
-            if dp.tags.get(k).map_or(true, |tv| tv != v) {
+            if dp.tags.get(k) != Some(v) {
                 return false;
             }
         }
